@@ -496,6 +496,10 @@ button {
     display: none;
 }
 
+.hero-mobile-visual {
+    display: none;
+}
+
 .hero-grid {
     display: flex;
     flex-direction: column;
@@ -2192,13 +2196,36 @@ button {
     #hero {
         padding-top: 100px;
         min-height: calc(100svh - 20px);
-        justify-content: center;
-        align-items: flex-start
+        justify-content: flex-start;
+        align-items: center;
     }
     .bg-hero {
-        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.65) 100%), url('/assets/gowsik-home.png');
-        background-size: cover;
-        background-position: 70% center;
+        display: none !important;
+    }
+    .hero-mobile-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .hero-mobile-photo-frame {
+        width: 100%;
+        max-width: 280px;
+        aspect-ratio: 4/4.5;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        background: #ffffff;
+        border: 1px solid rgba(20, 184, 166, 0.2);
+        box-shadow: 0 12px 30px -10px rgba(20, 184, 166, 0.2), 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .hero-mobile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 68% 18%;
+        display: block;
     }
     .hero-grid {
         max-width: 100%;
