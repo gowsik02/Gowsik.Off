@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GOWSIK B — Java Full Stack Developer</title>
+    <meta name="description" content="GOWSIK B — Java Full Stack Developer. Creative Full Stack Developer specializing in Java, Spring Boot, React, and Generative AI." />
+    <meta property="og:title" content="GOWSIK B — Java Full Stack Developer" />
+    <meta property="og:description" content="Java Full Stack Developer — Spring Boot, React, MySQL." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22none%22 stroke=%22%2314B8A6%22 stroke-width=%228%22/></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700,800&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            background-color: #ffffff;
+            background-image: url('/assets/bg-website-B9Wel5fO.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #site-bg-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            background-image: url('/assets/bg-website-B9Wel5fO.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-D09R3EEw.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CNIa3H1I.css">
+</head>
+
+<body>
+
+    <!-- Cursor Glow Overlay -->
+    <div id="cursor-glow"></div>
+
+    <!-- Top Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Fullscreen Website Background -->
+    <div id="site-bg-overlay"></div>
+
+
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-logo-wrapper">
+            <div class="loader-logo-text" id="loaderLogo">
+                <span class="letter">G</span>
+                <span class="letter">O</span>
+                <span class="letter">W</span>
+                <span class="letter">S</span>
+                <span class="letter">I</span>
+                <span class="letter">K</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">B</span>
+            </div>
+            <div class="loader-status" id="loaderStatus">Loading...</div>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#hero" class="nav-logo" id="navLogo"><span class="dot"></span>GOWSIK B</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#education" class="nav-item">Education</a></li>
+            <li><a href="#skills" class="nav-item">Skills</a></li>
+            <li><a href="#experience" class="nav-item">Experience</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#certifications" class="nav-item">Certificates</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta" id="navCta">Let's Talk</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div id="scroll-wrapper">
+        <!-- HERO -->
+        <section id="hero" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-hero">
+                <div class="bg-hero-left"></div>
+                <div class="bg-hero-right"></div>
+            </div>
+
+
+
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="hero-eyebrow"><span class="line"></span>Hello, I'm</div>
+                    <h1 class="hero-name">GOWSIK B</h1>
+                    <p class="hero-subtitle">Java Full Stack Developer</p>
+                    <p class="hero-desc">I build scalable web applications using Java, Spring Boot, React, Node.js and modern technologies while creating impactful software solutions.</p>
+                    <div class="hero-btns-group">
+                        <a href="#projects" class="btn btn-glass btn-glow-red" id="heroBtnExplore">Explore Portfolio</a>
+                        <a href="#" class="btn btn-glass btn-glow-red" id="downloadResume">Download Resume</a>
+                    </div>
+                    <div class="hero-quick-socials">
+                        <a href="https://github.com/gowsikbaskaran" target="_blank" class="social-circle-glass" aria-label="GitHub" id="heroGit">
+              <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.17.69-3.84-1.35-3.84-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.18-3.06-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.63 1.59.24 2.76.12 3.05.74.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55 4.51-1.51 7.77-5.77 7.77-10.78C23.02 5.24 18.27.5 12 .5z" /></svg>
+            </a>
+                        <a href="https://www.linkedin.com/in/gowsik-baskaran" target="_blank" class="social-circle-glass" aria-label="LinkedIn" id="heroLinkedin">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" /></svg>
+            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-about">
+                <svg viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,360 C300,450 500,200 800,340 C1100,480 1200,240 1440,360 L1440,800 L0,800 Z" fill="url(#about-wave-grad)" opacity="0.03"/>
+          <defs>
+            <linearGradient id="about-wave-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#14B8A6"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+            </div>
+
+
+
+            <div class="about-grid">
+                <div class="about-photo-wrap reveal">
+                    <div class="about-photo-glow"></div>
+                    <div class="about-photo-ring"></div>
+                    <div class="about-photo-rays"></div>
+                    <!-- Floating particles -->
+                    <div class="about-particle ap-1"></div>
+                    <div class="about-particle ap-2"></div>
+                    <div class="about-particle ap-3"></div>
+
+                    <div class="about-photo">
+                        <img src="/assets/photo-Bydm88EX.jpeg" alt="Gowsik B Photograph" />
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="section-header left-aligned reveal">
+                        <span class="eyebrow">WHO I AM</span>
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-desc">Get to know my professional background, coding values, and core motivation.</p>
+                    </div>
+                    <div class="about-description">
+                        <p class="about-text-reveal reveal">Hello, I'm GOWSIK B.</p>
+                        <p class="about-text-reveal reveal">A passionate Computer Science Engineering student and Java Full Stack Developer dedicated to building scalable web applications and AI-powered solutions.</p>
+                        <p class="about-text-reveal reveal">I enjoy solving real-world problems through clean backend architecture, intuitive frontend experiences and continuous learning.</p>
+                        <p class="about-text-reveal reveal">I believe technology should create meaningful impact by developing innovative products that improve people's lives.</p>
+                    </div>
+
+                    <!-- Premium Information Cards Grid -->
+                    <div class="about-cards-grid reveal">
+                        <div class="about-card glass">
+                            <div class="card-glow"></div>
+                            <div class="about-card-header">
+                                <span class="card-icon">📍</span>
+                                <span class="card-label">Location</span>
+                            </div>
+                            <span class="card-val">Coimbatore</span>
+                        </div>
+                        <div class="about-card glass">
+                            <div class="card-glow"></div>
+                            <div class="about-card-header">
+                                <span class="card-icon">🎓</span>
+                                <span class="card-label">Education</span>
+                            </div>
+                            <span class="card-val">CSE Student</span>
+                        </div>
+                        <div class="about-card glass">
+                            <div class="card-glow"></div>
+                            <div class="about-card-header">
+                                <span class="card-icon">💼</span>
+                                <span class="card-label">Role</span>
+                            </div>
+                            <span class="card-val">Java Full Stack Dev</span>
+                        </div>
+                        <div class="about-card glass">
+                            <div class="card-glow"></div>
+                            <div class="about-card-header">
+                                <span class="card-icon">🚀</span>
+                                <span class="card-label">Status</span>
+                            </div>
+                            <span class="card-val">Open to Opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-education"></div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">ACADEMIC JOURNEY</span>
+                <h2 class="section-title">Education</h2>
+                <p class="section-desc">My academic credentials, qualifications, and learning milestones.</p>
+            </div>
+
+
+
+            <!-- Premium Timeline Layout -->
+            <div class="education-timeline-container reveal">
+                <div class="timeline-line"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="education-timeline-item">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot"><svg viewBox="0 0 24 24" class="cap-icon"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 12.5V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-4.5l-7 3.82-7-3.82z"/></svg></div>
+                    </div>
+                    <div class="education-card-v3 glass">
+                        <div class="card-glow"></div>
+                        <div class="edu-card-top">
+                            <div class="edu-logo-wrapper">
+                                <!-- SVG Crest logo for college -->
+                                <svg class="edu-crest-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M32 6L10 16v18c0 12 22 24 22 24s22-12 22-24V16L32 6z"/>
+                  <path d="M22 28h20M22 36h20M32 20v24" stroke-dasharray="2 2"/>
+                  <circle cx="32" cy="32" r="6" fill="#14B8A6" stroke="none"/>
+                </svg>
+                            </div>
+                            <div class="edu-meta-text">
+                                <span class="edu-period">2024 – 2028</span>
+                                <h3>PPG Institute of Technology</h3>
+                                <p class="edu-degree">Bachelor of Engineering</p>
+                                <p class="edu-major">Computer Science Engineering</p>
+                            </div>
+                        </div>
+                        <div class="edu-grade-badge">
+                            <span class="grade-label">CGPA</span>
+                            <span class="grade-value">7.24</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="education-timeline-item">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot"><svg viewBox="0 0 24 24" class="cap-icon"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 12.5V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-4.5l-7 3.82-7-3.82z"/></svg></div>
+                    </div>
+                    <div class="education-card-v3 glass">
+                        <div class="card-glow"></div>
+                        <div class="edu-card-top">
+                            <div class="edu-logo-wrapper">
+                                <!-- SVG Crest logo for School 1 -->
+                                <svg class="edu-crest-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M32 8L12 18v22c0 10 20 18 20 18s20-8 20-18V18L32 8z"/>
+                  <path d="M32 20l-8 8h16l-8 8"/>
+                </svg>
+                            </div>
+                            <div class="edu-meta-text">
+                                <span class="edu-period">2023 – 2024</span>
+                                <h3>Sri Bharathidasan Matric School</h3>
+                                <p class="edu-degree">Higher Secondary Education</p>
+                            </div>
+                        </div>
+                        <div class="edu-grade-badge">
+                            <span class="grade-label">SCORE</span>
+                            <span class="grade-value">81.3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="education-timeline-item">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot"><svg viewBox="0 0 24 24" class="cap-icon"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 12.5V17c0 1.66 3.13 3 7 3s7-1.34 7-3v-4.5l-7 3.82-7-3.82z"/></svg></div>
+                    </div>
+                    <div class="education-card-v3 glass">
+                        <div class="card-glow"></div>
+                        <div class="edu-card-top">
+                            <div class="edu-logo-wrapper">
+                                <!-- SVG Crest logo for School 2 -->
+                                <svg class="edu-crest-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M32 10L14 20v20l18 14 18-14V20L32 10z"/>
+                  <circle cx="32" cy="28" r="8"/>
+                  <path d="M32 36v10"/>
+                </svg>
+                            </div>
+                            <div class="edu-meta-text">
+                                <span class="edu-period">2021 – 2022</span>
+                                <h3>St. Joseph's Matric High School</h3>
+                                <p class="edu-degree">Secondary Education</p>
+                            </div>
+                        </div>
+                        <div class="edu-grade-badge">
+                            <span class="grade-label">SCORE</span>
+                            <span class="grade-value">70%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-skills">
+                <div class="skills-blob blob-1"></div>
+                <div class="skills-blob blob-2"></div>
+            </div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">MY TOOLBOX</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-desc">The programming languages, frameworks, database systems, and development tools I use.</p>
+            </div>
+
+
+
+
+            <!-- Premium Animated Skills Grid -->
+            <div class="skills-premium-grid">
+
+                <!-- Frontend Development -->
+                <div class="skills-category-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg class="category-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+                        </div>
+                        <h3 class="category-title">Frontend Development</h3>
+                    </div>
+                    <div class="category-skills-list vertical">
+                        <!-- HTML5 -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon html"></span>
+                                    <span class="skill-name">HTML5</span>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <!-- CSS3 -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon css"></span>
+                                    <span class="skill-name">CSS3</span>
+                                </div>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="92"></div>
+                            </div>
+                        </div>
+                        <!-- Bootstrap -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon bootstrap"></span>
+                                    <span class="skill-name">Bootstrap</span>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <!-- JavaScript -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon js"></span>
+                                    <span class="skill-name">JavaScript</span>
+                                </div>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <!-- React.js -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon react"></span>
+                                    <span class="skill-name">React.js</span>
+                                </div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="skills-category-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg class="category-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/>
+              </svg>
+                        </div>
+                        <h3 class="category-title">Backend Development</h3>
+                    </div>
+                    <div class="category-skills-list vertical">
+                        <!-- Java -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon java"></span>
+                                    <span class="skill-name">Java</span>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <!-- Spring Boot -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon spring"></span>
+                                    <span class="skill-name">Spring Boot</span>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <!-- Node.js -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon node"></span>
+                                    <span class="skill-name">Node.js</span>
+                                </div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skills-category-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg class="category-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2"/>
+                <line x1="6" y1="6" x2="6" y2="6.01"/>
+                <line x1="6" y1="18" x2="6" y2="18.01"/>
+              </svg>
+                        </div>
+                        <h3 class="category-title">Database</h3>
+                    </div>
+                    <div class="category-skills-list vertical">
+                        <!-- MySQL -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon mysql"></span>
+                                    <span class="skill-name">MySQL</span>
+                                </div>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <!-- MongoDB -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon mongo"></span>
+                                    <span class="skill-name">MongoDB</span>
+                                </div>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming Concepts -->
+                <div class="skills-category-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg class="category-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                <path d="M9 18h6M10 22h4"/>
+              </svg>
+                        </div>
+                        <h3 class="category-title">Programming Concepts</h3>
+                    </div>
+                    <div class="category-skills-list vertical">
+                        <!-- OOP -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon oop"></span>
+                                    <span class="skill-name">OOP</span>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <!-- Problem Solving -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon problem"></span>
+                                    <span class="skill-name">Problem Solving</span>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <!-- Data Structures & Algorithms -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon dsa"></span>
+                                    <span class="skill-name">Data Structures & Algorithms</span>
+                                </div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skills-category-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg class="category-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+                        </div>
+                        <h3 class="category-title">Tools & Platforms</h3>
+                    </div>
+                    <div class="category-skills-list vertical">
+                        <!-- VS Code -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon vscode"></span>
+                                    <span class="skill-name">VS Code</span>
+                                </div>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <!-- Git & GitHub -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon github"></span>
+                                    <span class="skill-name">Git & GitHub</span>
+                                </div>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <!-- Postman -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon postman"></span>
+                                    <span class="skill-name">Postman</span>
+                                </div>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <!-- Figma -->
+                        <div class="skill-progress-item">
+                            <div class="skill-progress-top">
+                                <div class="skill-progress-left">
+                                    <span class="tech-icon figma"></span>
+                                    <span class="skill-name">Figma</span>
+                                </div>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress-bar">
+                                <div class="skill-progress-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTERNSHIPS -->
+        <section id="experience" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-experience">
+                <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+          <path d="M-100,200 C300,50 600,450 1000,250 C1200,150 1400,280 1600,200" stroke="url(#experience-ribbon-1)" stroke-width="2.5" opacity="0.08"/>
+          <path d="M-100,280 C300,130 550,530 950,330 C1150,230 1350,360 1600,280" stroke="url(#experience-ribbon-2)" stroke-width="1.8" opacity="0.05"/>
+          <defs>
+            <linearGradient id="experience-ribbon-1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#14B8A6"/>
+              <stop offset="100%" stop-color="#0F766E"/>
+            </linearGradient>
+            <linearGradient id="experience-ribbon-2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0F766E"/>
+              <stop offset="100%" stop-color="#14B8A6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+            </div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">CAREER PATH</span>
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-desc">Internships and practical training phases where I built production-grade modules.</p>
+            </div>
+
+
+
+            <div class="internships-grid">
+
+                <!-- Card 1: Techzit -->
+                <div class="intern-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="intern-card-header">
+                        <div class="intern-logo">
+                            <!-- Inline SVG Techzit logo -->
+                            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="22" cy="22" r="18"/>
+                <path d="M14 22h16M22 14v16"/>
+                <circle cx="22" cy="22" r="6" fill="#14B8A6" stroke="none"/>
+              </svg>
+                        </div>
+                        <div class="intern-meta-details">
+                            <span class="intern-company">Techzit Innovative Solution</span>
+                            <span class="intern-duration">Jun 2024 – Jul 2024</span>
+                        </div>
+                    </div>
+                    <h3 class="intern-role">Web Development Intern</h3>
+
+                    <ul class="intern-achievements">
+                        <li>Designed and developed an interactive Weather Dashboard integrating weather API feeds for real-time tracking.</li>
+                        <li>Engineered client-side filters, responsive grids, and detailed meteorological metrics using modern JavaScript.</li>
+                        <li>Optimized API caching mechanisms to reduce network load by 30% and ensure smooth user interactions.</li>
+                    </ul>
+
+                    <div class="intern-tags">
+                        <span>JavaScript</span><span>REST APIs</span><span>CSS3</span><span>HTML5</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Skillible -->
+                <div class="intern-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="intern-card-header">
+                        <div class="intern-logo">
+                            <!-- Inline SVG AICTE/Skillible logo -->
+                            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="8" y="8" width="28" height="28" rx="6"/>
+                <path d="M14 18l8 8 8-8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+                        </div>
+                        <div class="intern-meta-details">
+                            <span class="intern-company">Skillible (AICTE)</span>
+                            <span class="intern-duration">Jul 2024 – Aug 2024</span>
+                        </div>
+                    </div>
+                    <h3 class="intern-role">Generative AI Intern</h3>
+
+                    <ul class="intern-achievements">
+                        <li>Implemented practical Generative AI workflows utilizing large language models and neural architectures.</li>
+                        <li>Built and fine-tuned experimental chatbot configurations and automated code pipelines with AI toolsets.</li>
+                        <li>Developed automated solutions to solve real-world productivity issues, earning completion certificates.</li>
+                    </ul>
+
+                    <div class="intern-tags">
+                        <span>Python</span><span>Generative AI</span><span>OpenAI API</span><span>Prompting</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Medhams -->
+                <div class="intern-card glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="intern-card-header">
+                        <div class="intern-logo">
+                            <!-- Inline SVG Medhams logo -->
+                            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22h20M22 12v20M22 6C13.16 6 6 13.16 6 22s7.16 16 16 16 16-7.16 16-16S30.84 6 22 6z"/>
+              </svg>
+                        </div>
+                        <div class="intern-meta-details">
+                            <span class="intern-company">Medhams</span>
+                            <span class="intern-duration">Aug 2024 – Oct 2024</span>
+                        </div>
+                    </div>
+                    <h3 class="intern-role">Full Stack Development Intern</h3>
+
+                    <ul class="intern-achievements">
+                        <li>Built a production-ready e-commerce platform incorporating full-stack modules.</li>
+                        <li>Integrated secure user authentication, product catalog systems, shopping carts, and checkout pipelines.</li>
+                        <li>Designed and optimized MySQL relational database schemas for high-speed query execution and relational integrity.</li>
+                    </ul>
+
+                    <div class="intern-tags">
+                        <span>Node.js</span><span>Express</span><span>MySQL</span><span>JavaScript</span><span>HTML/CSS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-projects"></div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">CREATIVE WORKS</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-desc">A handpicked showcase of my development projects, hardware integrations, and clean code architectures.</p>
+            </div>
+
+            <!-- Background Technical Terms & Outlines -->
+
+
+            <div class="projects-list-v2">
+
+                <div class="project-card-v2 glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="project-card-body">
+                        <span class="project-num-v2">01</span>
+                        <h3>Smart Shoes for Blind People</h3>
+                        <p>IoT-based smart shoes that help visually impaired people navigate safely by detecting obstacles in real time with haptic/audio feedback.</p>
+                        <div class="project-tech-badges">
+                            <span>IoT</span><span>Embedded Systems</span><span>Sensors</span><span>Java</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                            <a href="#" class="btn-action glass" id="projDemo1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-v2 glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="project-card-body">
+                        <span class="project-num-v2">02</span>
+                        <h3>Smart Agriculture</h3>
+                        <p>Automatic Water Dispenser using soil moisture sensing technology to optimize crop irrigation dynamically.</p>
+                        <div class="project-tech-badges">
+                            <span>IoT Sensors</span><span>Soil Moisture</span><span>Spring Boot</span><span>MySQL</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                            <a href="#" class="btn-action glass" id="projDemo2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-v2 glass reveal">
+                    <div class="card-glow"></div>
+                    <div class="project-card-body">
+                        <span class="project-num-v2">03</span>
+                        <h3>Sign Language Translator</h3>
+                        <p>Software solution that translates sign language gestures into understandable communication in real time using computer vision models.</p>
+                        <div class="project-tech-badges">
+                            <span>Computer Vision</span><span>Java</span><span>React</span><span>REST APIs</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                            <a href="#" class="btn-action glass" id="projDemo3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & METRICS -->
+        <section id="certifications" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-certifications"></div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">CREDENTIALS</span>
+                <h2 class="section-title">Certifications & Analytics</h2>
+                <p class="section-desc">Verified technical achievements, language competencies, and personal creative interests.</p>
+            </div>
+
+            <!-- Background Technical Terms & Outlines -->
+
+
+            <div class="cert-and-lang-grid">
+                <div class="cert-column">
+                    <div class="certs-list-v2">
+
+                        <!-- Certificate 1 -->
+                        <div class="cert-card-v2 glass reveal">
+                            <div class="card-glow"></div>
+                            <div class="cert-card-header">
+                                <!-- Inline SVG Certificate Icon -->
+                                <svg class="cert-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                                <div class="cert-meta-info">
+                                    <h3>Generative AI Fundamentals</h3>
+                                    <span class="cert-issuer">Databricks</span>
+                                </div>
+                            </div>
+                            <div class="cert-card-footer">
+                                <span class="cert-id">Cred ID: <b>DB-GENAI-7829</b></span>
+                                <a href="#" class="btn-cert-view" id="viewCert1">View Certificate</a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 2 -->
+                        <div class="cert-card-v2 glass reveal">
+                            <div class="card-glow"></div>
+                            <div class="cert-card-header">
+                                <!-- Inline SVG Certificate Icon -->
+                                <svg class="cert-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                                <div class="cert-meta-info">
+                                    <h3>Azure AI Fundamentals (AI-900)</h3>
+                                    <span class="cert-issuer">Microsoft</span>
+                                </div>
+                            </div>
+                            <div class="cert-card-footer">
+                                <span class="cert-id">Cred ID: <b>MS-AZ900-4389</b></span>
+                                <a href="#" class="btn-cert-view" id="viewCert2">View Certificate</a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 3 -->
+                        <div class="cert-card-v2 glass reveal">
+                            <div class="card-glow"></div>
+                            <div class="cert-card-header">
+                                <!-- Inline SVG Certificate Icon -->
+                                <svg class="cert-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                                <div class="cert-meta-info">
+                                    <h3>SQL Database Querying Profile</h3>
+                                    <span class="cert-issuer">SQL Prep Insta</span>
+                                </div>
+                            </div>
+                            <div class="cert-card-footer">
+                                <span class="cert-id">Cred ID: <b>PI-SQL-8923</b></span>
+                                <a href="#" class="btn-cert-view" id="viewCert3">View Certificate</a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 4 -->
+                        <div class="cert-card-v2 glass reveal">
+                            <div class="card-glow"></div>
+                            <div class="cert-card-header">
+                                <!-- Inline SVG Certificate Icon -->
+                                <svg class="cert-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                                <div class="cert-meta-info">
+                                    <h3>Cloud Computing Frameworks</h3>
+                                    <span class="cert-issuer">NPTEL</span>
+                                </div>
+                            </div>
+                            <div class="cert-card-footer">
+                                <span class="cert-id">Cred ID: <b>NPTEL-CC-5829</b></span>
+                                <a href="#" class="btn-cert-view" id="viewCert4">View Certificate</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="metrics-column">
+                    <!-- Premium Languages Showcase Card -->
+                    <div class="glass metrics-card reveal">
+                        <h3>Languages</h3>
+                        <div class="languages-showcase">
+                            <div class="lang-circular-item">
+                                <svg class="progress-ring-svg" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="40"></circle>
+                  <circle class="ring-fill" id="ringEn" cx="50" cy="50" r="40"></circle>
+                </svg>
+                                <div class="ring-text">
+                                    <span class="lang">English</span>
+                                    <span class="level">Professional</span>
+                                </div>
+                            </div>
+                            <div class="lang-circular-item">
+                                <svg class="progress-ring-svg" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="40"></circle>
+                  <circle class="ring-fill" id="ringTa" cx="50" cy="50" r="40"></circle>
+                </svg>
+                                <div class="ring-text">
+                                    <span class="lang">Tamil</span>
+                                    <span class="level">Native</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests Card -->
+                    <div class="glass metrics-card reveal" style="margin-top: 24px;">
+                        <h3>Interests</h3>
+                        <div class="interests-grid-v2">
+                            <div class="interest-pill"><span class="pill-icon">🤖</span> Artificial Intelligence</div>
+                            <div class="interest-pill"><span class="pill-icon">📸</span> Photography</div>
+                            <div class="interest-pill"><span class="pill-icon">🖌️</span> Photo Editing</div>
+                            <div class="interest-pill"><span class="pill-icon">🎬</span> Video Editing</div>
+                            <div class="interest-pill"><span class="pill-icon">💡</span> Creative Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <!-- Section-specific Background -->
+            <div class="section-bg bg-contact"></div>
+
+            <!-- Section Header -->
+            <div class="section-header reveal">
+                <span class="eyebrow">GET IN TOUCH</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-desc">Have a question, collaboration idea, or project proposal? Reach out directly.</p>
+            </div>
+
+            <!-- Background Technical Terms & Outlines -->
+
+
+            <div class="contact-grid-v2">
+
+                <!-- Contact Information Block -->
+                <div class="contact-details-col">
+
+                    <div class="contact-card-glass glass reveal">
+                        <div class="card-glow"></div>
+                        <div class="contact-info-header">
+                            <!-- Email SVG Icon -->
+                            <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
+                            <span class="label">Email</span>
+                        </div>
+                        <a href="mailto:gowsikbaskaran2@gmail.com" class="val">gowsikbaskaran2@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card-glass glass reveal">
+                        <div class="card-glow"></div>
+                        <div class="contact-info-header">
+                            <!-- Phone SVG Icon -->
+                            <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+                            <span class="label">Phone</span>
+                        </div>
+                        <a href="tel:+919003427793" class="val">+91 9003427793</a>
+                    </div>
+
+                    <div class="contact-card-glass glass reveal">
+                        <div class="card-glow"></div>
+                        <div class="contact-info-header">
+                            <!-- Map Pin SVG Icon -->
+                            <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+                            <span class="label">Location</span>
+                        </div>
+                        <span class="val">Coimbatore, Tamil Nadu</span>
+                    </div>
+
+                    <!-- Social Details Grid -->
+                    <div class="contact-social-grid">
+                        <a href="https://www.linkedin.com/in/gowsik-baskaran" target="_blank" class="social-glass-pill glass reveal" id="contactLinkedin">
+                            <!-- LinkedIn Icon -->
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="social-btn-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>                            LinkedIn
+                        </a>
+                        <a href="https://github.com/gowsikbaskaran" target="_blank" class="social-glass-pill glass reveal" id="contactGithub">
+                            <!-- GitHub Icon -->
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="social-btn-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                            GitHub
+                        </a>
+                        <a href="#" class="social-glass-pill glass reveal" id="contactDownloadResume">
+                            <!-- Resume/Doc Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="social-btn-icon" style="height:14px; width:14px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>                            Resume
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Redesigned Form -->
+                <div class="contact-form-col glass reveal">
+                    <div class="card-glow"></div>
+                    <form class="premium-form" id="contactForm" onsubmit="event.preventDefault();">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <input type="text" id="formName" class="form-input-field" placeholder=" " required />
+                                <label for="formName" class="form-input-label">Your Name</label>
+                                <div class="form-input-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="formEmail" class="form-input-field" placeholder=" " required />
+                                <label for="formEmail" class="form-input-label">Your Email</label>
+                                <div class="form-input-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="formMessage" class="form-input-field form-textarea-field" rows="5" placeholder=" " required></textarea>
+                            <label for="formMessage" class="form-input-label">Tell me about your project...</label>
+                            <div class="form-input-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow-red form-submit-btn" id="contactSubmit">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-wrap">
+                <h2 class="footer-thankyou reveal">THANK YOU FOR VISITING</h2>
+                <p class="footer-credits reveal">Designed &amp; Developed by <b>GOWSIK B</b> · © 2026</p>
+                <div class="footer-animated-line"></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- GSAP & Lenis Smooth Scrolling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+</body>
+
+</html>
