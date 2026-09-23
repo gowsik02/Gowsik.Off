@@ -471,7 +471,8 @@ button {
 }
 
 #hero {
-    position: relative
+    position: relative;
+    align-items: flex-start;
 }
 
 .bg-hero {
@@ -480,18 +481,19 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: none
+    pointer-events: none;
+    background-image: url('/assets/gowsik-home.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 
 .bg-hero-left,
 .bg-hero-right {
-    width: 50%;
-    height: 100%;
-    background: transparent
+    display: none;
 }
 
 .hero-grid {
@@ -2192,6 +2194,11 @@ button {
         min-height: calc(100svh - 20px);
         justify-content: center;
         align-items: flex-start
+    }
+    .bg-hero {
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.65) 100%), url('/assets/gowsik-home.png');
+        background-size: cover;
+        background-position: 70% center;
     }
     .hero-grid {
         max-width: 100%;
