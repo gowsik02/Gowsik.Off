@@ -2087,12 +2087,18 @@ button {
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity .8s var(--ease), transform .8s var(--ease)
+    transition: opacity .8s var(--ease), transform .8s var(--ease);
+    will-change: opacity, transform;
 }
 
 .reveal.in-view {
     opacity: 1;
-    transform: translateY(0)
+    transform: translateY(0);
+}
+
+.section-upward-anim {
+    transition: transform .85s cubic-bezier(.16, 1, .3, 1), opacity .85s cubic-bezier(.16, 1, .3, 1), box-shadow .85s ease;
+    will-change: transform, opacity;
 }
 
 .split-char {
@@ -2135,15 +2141,62 @@ button {
 @media (max-width: 768px) {
     html,
     body {
-        overflow-x: hidden !important;
-        width: 100%
+        overflow-x: clip;
+        width: 100%;
+        scroll-behavior: auto;
     }
     #cursor-glow {
         display: none !important
     }
     .section {
-        padding: 65px 18px 45px;
-        min-height: auto
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        min-height: 100svh;
+        min-height: 100vh;
+        padding: 70px 18px 45px;
+        box-sizing: border-box;
+        box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.08), 0 -1px 3px rgba(20, 184, 166, 0.16);
+    }
+    .section.section-upward-anim {
+        opacity: 0.15;
+        transform: translateY(40px) scale(0.985);
+        transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.85s ease;
+    }
+    .section.section-upward-anim.section-in-view {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    .section.section-in-view .section-header {
+        animation: mobileUpwardSlide 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .section.section-in-view .about-grid,
+    .section.section-in-view .education-timeline-container,
+    .section.section-in-view .skills-premium-grid,
+    .section.section-in-view .internships-grid,
+    .section.section-in-view .projects-list-v2,
+    .section.section-in-view .cert-and-lang-grid,
+    .section.section-in-view .contact-grid-v2 {
+        animation: mobileUpwardSlide 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+    footer#footer.section-upward-anim {
+        opacity: 0.15;
+        transform: translateY(35px);
+        transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    footer#footer.section-upward-anim.section-in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    @keyframes mobileUpwardSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(28px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     .section-header {
         margin: 0 auto 28px;

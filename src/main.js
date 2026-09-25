@@ -126,6 +126,17 @@ function animateHeroEntry() {
             heroVisual.style.transform = "scale(1)";
         });
     }
+
+    const heroMobileVisual = document.getElementById("heroMobileVisual");
+    if (heroMobileVisual) {
+        heroMobileVisual.style.opacity = "0";
+        heroMobileVisual.style.transform = "translateY(30px)";
+        heroMobileVisual.style.transition = "opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)";
+        requestAnimationFrame(() => {
+            heroMobileVisual.style.opacity = "1";
+            heroMobileVisual.style.transform = "translateY(0)";
+        });
+    }
 }
 
 // Navigation Controller
@@ -279,21 +290,39 @@ function initCardGlow() {
     });
 }
 
-// Intersection Observer for Reveal Elements
+// Intersection Observer for Reveal Elements & Mobile Section Upward Animations
 function initReveal() {
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("in-view");
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -5% 0px"
+        threshold: 0.08,
+        rootMargin: "0px 0px -30px 0px"
     });
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    // Section Upward Animation Observer for mobile & desktop
+    const sections = document.querySelectorAll(".section:not(#hero), footer#footer");
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("section-in-view");
+            }
+        });
+    }, {
+        threshold: 0.04,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    sections.forEach((sec) => {
+        sec.classList.add("section-upward-anim");
+        sectionObserver.observe(sec);
+    });
 }
 
 // Parallax Movement for Hero
