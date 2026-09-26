@@ -8,6 +8,7 @@
     --text-secondary: #475569;
     --text-light: #94a3b8;
     --font-display: "Clash Display", "Space Grotesk", sans-serif;
+    --font-gaming: "Orbitron", "Oxanium", "Space Grotesk", sans-serif;
     --font-body: "General Sans", "Inter", sans-serif;
     --font-alt: "Space Grotesk", sans-serif;
     --glass: #ffffff;
@@ -133,47 +134,54 @@ button {
 }
 
 .loader-logo-text {
-    font-family: var(--font-display);
-    font-size: clamp(40px, 8vw, 84px);
-    font-weight: 800;
-    letter-spacing: .25em;
+    font-family: var(--font-gaming);
+    font-size: clamp(38px, 8.5vw, 86px);
+    font-weight: 900;
+    letter-spacing: .28em;
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    text-shadow: 0 0 20px rgba(20, 184, 166, .12);
 }
 
 .loader-logo-text .letter {
-    color: #e2e8f0;
-    transition: color .4s ease, text-shadow .4s ease, transform .4s ease;
-    display: inline-block
+    color: #cbd5e1;
+    transition: color .35s ease, text-shadow .35s ease, transform .35s cubic-bezier(.16, 1, .3, 1), filter .35s ease;
+    display: inline-block;
+    filter: drop-shadow(0 0 1px rgba(20, 184, 166, .2));
 }
 
 .loader-logo-text .letter.glow {
     color: var(--accent);
-    text-shadow: 0 0 15px rgba(20, 184, 166, .4);
-    transform: scale(1.1)
+    text-shadow: 0 0 20px rgba(20, 184, 166, .85), 0 0 40px rgba(20, 184, 166, .45), 0 0 60px rgba(20, 184, 166, .25);
+    transform: scale(1.16) translateY(-4px);
+    filter: drop-shadow(0 0 10px rgba(20, 184, 166, .65));
 }
 
 .loader-logo-text .letter.active {
     color: var(--glow);
-    text-shadow: 0 0 15px rgba(15, 118, 110, .2);
-    transform: scale(1)
+    text-shadow: 0 0 16px rgba(15, 118, 110, .45), 0 0 30px rgba(20, 184, 166, .25);
+    transform: scale(1.02);
 }
 
 .loader-status {
-    font-family: var(--font-alt);
+    font-family: var(--font-gaming);
     font-size: 13px;
+    font-weight: 600;
     color: var(--text-secondary);
-    letter-spacing: .15em;
+    letter-spacing: .24em;
     text-transform: uppercase;
-    transition: color .4s ease, opacity .4s ease;
-    opacity: .6
+    transition: color .4s ease, opacity .4s ease, letter-spacing .4s ease;
+    opacity: .75;
 }
 
 .loader-status.complete {
     color: var(--accent);
-    font-weight: 600;
-    opacity: 1
+    font-weight: 700;
+    letter-spacing: .28em;
+    text-shadow: 0 0 14px rgba(20, 184, 166, .5);
+    opacity: 1;
 }
 
 #scroll-wrapper {
