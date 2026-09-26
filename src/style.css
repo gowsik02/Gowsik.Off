@@ -1814,31 +1814,6 @@ button {
     color: var(--text-secondary)
 }
 
-.interests-grid-v2 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px
-}
-
-.interest-pill {
-    padding: 8px 16px;
-    border-radius: 30px;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    font-size: 13px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform .3s, border-color .3s, color .3s
-}
-
-.interest-pill:hover {
-    transform: scale(1.05);
-    border-color: var(--accent);
-    color: var(--text)
-}
-
 #contact {
 }
 
@@ -2735,15 +2710,6 @@ button {
     }
     .ring-text .level {
         font-size: 10px
-    }
-    .interests-grid-v2 {
-        justify-content: center;
-        gap: 6px
-    }
-    .interest-pill {
-        padding: 6px 12px;
-        font-size: 11px;
-        border-radius: 20px
     }
     .contact-grid-v2 {
         grid-template-columns: 1fr;
