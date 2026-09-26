@@ -290,39 +290,21 @@ function initCardGlow() {
     });
 }
 
-// Intersection Observer for Reveal Elements & Mobile Section Upward Animations
+// Intersection Observer for Reveal Elements
 function initReveal() {
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("in-view");
-                revealObserver.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.08,
-        rootMargin: "0px 0px -30px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -5% 0px"
     });
 
-    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    // Section Upward Animation Observer for mobile & desktop
-    const sections = document.querySelectorAll(".section:not(#hero), footer#footer");
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-in-view");
-            }
-        });
-    }, {
-        threshold: 0.04,
-        rootMargin: "0px 0px -40px 0px"
-    });
-
-    sections.forEach((sec) => {
-        sec.classList.add("section-upward-anim");
-        sectionObserver.observe(sec);
-    });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
 
 // Parallax Movement for Hero
