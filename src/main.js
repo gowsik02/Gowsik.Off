@@ -115,28 +115,6 @@ function animateHeroEntry() {
             el.style.transform = "translateY(0)";
         });
     });
-
-    const heroVisual = document.getElementById("heroVisual");
-    if (heroVisual) {
-        heroVisual.style.opacity = "0";
-        heroVisual.style.transform = "scale(0.96)";
-        heroVisual.style.transition = "opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)";
-        requestAnimationFrame(() => {
-            heroVisual.style.opacity = "1";
-            heroVisual.style.transform = "scale(1)";
-        });
-    }
-
-    const heroMobileVisual = document.getElementById("heroMobileVisual");
-    if (heroMobileVisual) {
-        heroMobileVisual.style.opacity = "0";
-        heroMobileVisual.style.transform = "translateY(30px)";
-        heroMobileVisual.style.transition = "opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)";
-        requestAnimationFrame(() => {
-            heroMobileVisual.style.opacity = "1";
-            heroMobileVisual.style.transform = "translateY(0)";
-        });
-    }
 }
 
 // Navigation Controller
@@ -306,45 +284,6 @@ function initReveal() {
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
-
-// Parallax Movement for Hero
-const heroVisual = document.getElementById("heroVisual");
-const floatingChips = document.querySelectorAll(".floating-chip");
-let mouseNormX = 0;
-let mouseNormY = 0;
-let visualPosX = 0;
-let visualPosY = 0;
-let chipsPosX = [0, 0, 0, 0, 0];
-let chipsPosY = [0, 0, 0, 0, 0];
-const chipOffsets = [
-    [-10, -6],
-    [12, 10],
-    [-15, 7],
-    [10, -12],
-    [-6, 12]
-];
-
-document.addEventListener("mousemove", (e) => {
-    mouseNormX = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouseNormY = (e.clientY / window.innerHeight - 0.5) * 2;
-});
-
-function animateHeroParallax() {
-    if (!isTouch && heroVisual) {
-        visualPosX += (mouseNormX * 15 - visualPosX) * 0.05;
-        visualPosY += (mouseNormY * 11 - visualPosY) * 0.05;
-        heroVisual.style.transform = `translate3d(${visualPosX}px, ${visualPosY}px, 0)`;
-
-        floatingChips.forEach((chip, i) => {
-            const [offX, offY] = chipOffsets[i] || [0, 0];
-            chipsPosX[i] += (mouseNormX * offX - chipsPosX[i]) * 0.05;
-            chipsPosY[i] += (mouseNormY * offY - chipsPosY[i]) * 0.05;
-            chip.style.transform = `translate3d(${chipsPosX[i]}px, ${chipsPosY[i]}px, 0)`;
-        });
-    }
-    requestAnimationFrame(animateHeroParallax);
-}
-requestAnimationFrame(animateHeroParallax);
 
 // Magnetic Buttons Effect
 document.querySelectorAll(".btn, .social-circle-glass, .social-glass-pill").forEach((btn) => {
