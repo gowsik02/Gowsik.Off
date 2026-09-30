@@ -431,27 +431,6 @@ function initSkillBars() {
     });
 }
 
-// 3D About Photo Tilt on Scroll
-function initAbout3D() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    const photo = document.querySelector(".about-photo img");
-    if (photo && !isTouch && window.innerWidth > 768) {
-        gsap.fromTo(photo, {
-            rotateY: -35,
-            transformPerspective: 1000
-        }, {
-            rotateY: 35,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#about",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1
-            }
-        });
-    }
-}
-
 // Initialize all features on DOMContentLoaded
 window.addEventListener("DOMContentLoaded", () => {
     initNav();
@@ -462,5 +441,4 @@ window.addEventListener("DOMContentLoaded", () => {
     initCursorGlow();
     initScrollProgress();
     initSkillBars();
-    initAbout3D();
 });
