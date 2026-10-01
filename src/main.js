@@ -370,6 +370,67 @@ function initSkillBars() {
     });
 }
 
+// Horizontal Pinned Scroll for Featured Projects
+function initProjectsHorizontalScroll() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    const section = document.getElementById("projects");
+    const track = document.getElementById("projectsTrack");
+    const viewport = document.querySelector(".projects-horizontal-viewport");
+    const progressBar = document.getElementById("projectsProgressBar");
+    const activeNum = document.getElementById("projectActiveNum");
+    const cards = document.querySelectorAll(".project-card-v2");
+
+    if (!section || !track || cards.length === 0) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+        const getScrollDistance = () => {
+            const trackWidth = track.scrollWidth;
+            const containerWidth = viewport ? viewport.clientWidth : window.innerWidth;
+            return Math.max(0, trackWidth - containerWidth + 40);
+        };
+
+        const horizontalTween = gsap.to(track, {
+            x: () => -getScrollDistance(),
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: () => `+=${Math.max(window.innerHeight * 1.8, getScrollDistance() * 1.25)}`,
+                pin: true,
+                scrub: 0.8,
+                invalidateOnRefresh: true,
+                anticipatePin: 1,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    if (progressBar) {
+                        const pct = Math.min(100, Math.max(25, Math.round(25 + progress * 75)));
+                        progressBar.style.width = `${pct}%`;
+                    }
+                    if (activeNum) {
+                        const totalCards = cards.length;
+                        const activeIdx = Math.min(totalCards, Math.max(1, Math.floor(progress * totalCards * 0.96) + 1));
+                        activeNum.textContent = activeIdx < 10 ? `0${activeIdx}` : `${activeIdx}`;
+                    }
+                }
+            }
+        });
+
+        return () => {
+            if (horizontalTween.scrollTrigger) horizontalTween.scrollTrigger.kill();
+            horizontalTween.kill();
+            gsap.set(track, { clearProps: "transform" });
+        };
+    });
+
+    mm.add("(max-width: 768px)", () => {
+        gsap.set(track, { clearProps: "transform" });
+        if (progressBar) progressBar.style.width = "100%";
+    });
+}
+
 // Initialize all features on DOMContentLoaded
 window.addEventListener("DOMContentLoaded", () => {
     initNav();
@@ -380,4 +441,11 @@ window.addEventListener("DOMContentLoaded", () => {
     initCursorGlow();
     initScrollProgress();
     initSkillBars();
+    initProjectsHorizontalScroll();
+});
+
+window.addEventListener("load", () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+    }
 });

@@ -702,126 +702,155 @@
             </div>
         </section>
         <!-- PROJECTS -->
-        <section id="projects" class="section">
+        <section id="projects" class="section projects-pinned-section">
+            <div class="projects-pinned-inner">
+                <!-- Section Header with Progress Counter -->
+                <div class="projects-top-bar reveal">
+                    <div class="section-header projects-section-header">
+                        <span class="eyebrow">CREATIVE WORKS</span>
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-desc">A handpicked showcase of my development projects — desktop environments, AI platforms, and design-led systems.</p>
+                    </div>
 
-            <!-- Section Header -->
-            <div class="section-header reveal">
-                <span class="eyebrow">CREATIVE WORKS</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-desc">A handpicked showcase of my development projects — desktop environments, AI platforms, and design-led systems.</p>
-            </div>
-
-            <!-- Background Technical Terms & Outlines -->
-
-
-            <div class="projects-list-v2">
-
-                <div class="project-card-v2 glass reveal">
-                    <div class="card-glow"></div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <div class="project-logo">
-                                <img src="/assets/goose-os.png" alt="GOOSE OS logo" loading="lazy" />
-                            </div>
-                            <div class="project-card-top-meta">
-                                <span class="project-num-v2">01</span>
-                                <span class="project-period">Present</span>
-                            </div>
+                    <div class="projects-nav-hint">
+                        <div class="projects-progress-track">
+                            <div class="projects-progress-bar" id="projectsProgressBar"></div>
                         </div>
-                        <h3>GOOSE OS</h3>
-                        <span class="project-role">Desktop Shell Developer</span>
-                        <ul class="project-highlights">
-                            <li>Developed an OS-like Linux desktop environment prototype using React, Vite and Tailwind CSS, featuring a modern desktop shell and a developer-focused user experience.</li>
-                            <li>Implemented core desktop functionalities including an application launcher, dock, top panel, multiple workspaces, window management and keyboard navigation.</li>
-                            <li>Built reusable system UI components with theme support, quick settings, notifications, accessibility features and persistent user settings.</li>
-                        </ul>
-                        <div class="project-tech-badges">
-                            <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>Linux</span>
-                        </div>
-                        <div class="project-action-links">
-                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
-                            <a href="#" class="btn-action glass" id="projDemo1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
-                        </div>
+                        <span class="projects-counter">
+                            <span id="projectActiveNum">01</span> / <span class="total-num">04</span>
+                        </span>
+                        <span class="projects-scroll-tip">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            Scroll to explore
+                        </span>
                     </div>
                 </div>
 
-                <div class="project-card-v2 glass reveal">
-                    <div class="card-glow"></div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <div class="project-logo">
-                                <img src="/assets/urbanmind.png" alt="UrbanMind logo" loading="lazy" />
+                <div class="projects-horizontal-viewport">
+                    <div class="projects-list-v2" id="projectsTrack">
+
+                        <!-- Project 01 -->
+                        <div class="project-card-v2 glass">
+                            <div class="card-glow"></div>
+                            <div class="project-card-body">
+                                <div class="project-card-top">
+                                    <div class="project-logo">
+                                        <img src="/assets/goose-os.png" alt="GOOSE OS logo" loading="lazy" />
+                                    </div>
+                                    <div class="project-card-top-meta">
+                                        <span class="project-num-v2">01</span>
+                                        <span class="project-period">Present</span>
+                                    </div>
+                                </div>
+                                <h3>GOOSE OS</h3>
+                                <span class="project-role">Desktop Shell Developer</span>
+                                <ul class="project-highlights">
+                                    <li>Developed an OS-like Linux desktop environment prototype using React, Vite and Tailwind CSS, featuring a modern desktop shell and a developer-focused user experience.</li>
+                                    <li>Implemented core desktop functionalities including an application launcher, dock, top panel, multiple workspaces, window management and keyboard navigation.</li>
+                                    <li>Built reusable system UI components with theme support, quick settings, notifications, accessibility features and persistent user settings.</li>
+                                </ul>
+                                <div class="project-tech-badges">
+                                    <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>Linux</span>
+                                </div>
+                                <div class="project-action-links">
+                                    <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                                    <a href="#" class="btn-action glass" id="projDemo1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                                </div>
                             </div>
-                            <div class="project-card-top-meta">
-                                <span class="project-num-v2">02</span>
-                                <span class="project-period">Jul 2026</span>
+                        </div>
+
+                        <!-- Project 02 -->
+                        <div class="project-card-v2 glass">
+                            <div class="card-glow"></div>
+                            <div class="project-card-body">
+                                <div class="project-card-top">
+                                    <div class="project-logo">
+                                        <img src="/assets/urbanmind.png" alt="UrbanMind logo" loading="lazy" />
+                                    </div>
+                                    <div class="project-card-top-meta">
+                                        <span class="project-num-v2">02</span>
+                                        <span class="project-period">Jul 2026</span>
+                                    </div>
+                                </div>
+                                <h3>UrbanMind</h3>
+                                <span class="project-role">Backend Developer</span>
+                                <ul class="project-highlights">
+                                    <li>Developed the backend architecture for an AI-powered civic intelligence platform using FastAPI and Python to process and manage citizen grievances.</li>
+                                    <li>Integrated PostgreSQL with SQLAlchemy and Alembic to manage structured grievance, ward and user data with scalable database operations.</li>
+                                    <li>Built backend services for CSV-based grievance ingestion, AI-driven priority processing, analytics and automated PDF report generation.</li>
+                                </ul>
+                                <div class="project-tech-badges">
+                                    <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>SQLAlchemy</span><span>Pandas</span>
+                                </div>
+                                <div class="project-action-links">
+                                    <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                                    <a href="#" class="btn-action glass" id="projDemo2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                                </div>
                             </div>
                         </div>
-                        <h3>UrbanMind</h3>
-                        <span class="project-role">Backend Developer</span>
-                        <ul class="project-highlights">
-                            <li>Developed the backend architecture for an AI-powered civic intelligence platform using FastAPI and Python to process and manage citizen grievances.</li>
-                            <li>Integrated PostgreSQL with SQLAlchemy and Alembic to manage structured grievance, ward and user data with scalable database operations.</li>
-                            <li>Built backend services for CSV-based grievance ingestion, AI-driven priority processing, analytics and automated PDF report generation.</li>
-                        </ul>
-                        <div class="project-tech-badges">
-                            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>SQLAlchemy</span><span>Pandas</span>
+
+                        <!-- Project 03 -->
+                        <div class="project-card-v2 glass">
+                            <div class="card-glow"></div>
+                            <div class="project-card-body">
+                                <div class="project-card-top">
+                                    <div class="project-logo project-logo-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                                    </div>
+                                    <div class="project-card-top-meta">
+                                        <span class="project-num-v2">03</span>
+                                        <span class="project-period">Sep 2026</span>
+                                    </div>
+                                </div>
+                                <h3>VERITAS</h3>
+                                <span class="project-role">Project Lead</span>
+                                <ul class="project-highlights">
+                                    <li>Led the development of VERITAS, an AI-powered satellite imagery discovery and multi-temporal change intelligence system for SIH 2026.</li>
+                                    <li>Coordinated the team across AI/ML, backend, geospatial processing, computer vision and dashboard development to integrate the complete solution workflow.</li>
+                                    <li>Managed project architecture, technical planning, prototype development and SIH documentation while ensuring integration of the system's core modules.</li>
+                                </ul>
+                                <div class="project-tech-badges">
+                                    <span>Figma</span><span>Canva</span><span>Python</span><span>FastAPI</span><span>PyTorch</span>
+                                </div>
+                                <div class="project-action-links">
+                                    <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                                    <a href="#" class="btn-action glass" id="projDemo3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-action-links">
-                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
-                            <a href="#" class="btn-action glass" id="projDemo2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+
+                        <!-- Project 04 -->
+                        <div class="project-card-v2 glass">
+                            <div class="card-glow"></div>
+                            <div class="project-card-body">
+                                <div class="project-card-top">
+                                    <div class="project-logo project-logo-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                                    </div>
+                                    <div class="project-card-top-meta">
+                                        <span class="project-num-v2">04</span>
+                                        <span class="project-period">Present</span>
+                                    </div>
+                                </div>
+                                <h3>ODFE — Odoo Food Experience</h3>
+                                <span class="project-role">Odoo Developer</span>
+                                <ul class="project-highlights">
+                                    <li>Developed a modular enterprise restaurant POS suite on Odoo 19 with 16 custom addons covering POS, payments, products, tables, bookings, kitchen operations and self-ordering.</li>
+                                    <li>Implemented real-time restaurant workflows including a Kitchen Display System, customer display, QR-based self-ordering, payment integration and order synchronization.</li>
+                                    <li>Built analytics and reporting features with dashboard visualizations and PDF/XLSX report generation using a modular Odoo architecture.</li>
+                                </ul>
+                                <div class="project-tech-badges">
+                                    <span>Odoo 19</span><span>Python</span><span>OWL 2</span><span>JavaScript</span><span>PostgreSQL</span><span>Docker</span>
+                                </div>
+                                <div class="project-action-links">
+                                    <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
+                                    <a href="#" class="btn-action glass" id="projDemo4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-
-                <div class="project-card-v2 glass reveal">
-                    <div class="card-glow"></div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <span class="project-num-v2">03</span>
-                            <span class="project-period">Sep 2026</span>
-                        </div>
-                        <h3>VERITAS</h3>
-                        <span class="project-role">Project Lead</span>
-                        <ul class="project-highlights">
-                            <li>Led the development of VERITAS, an AI-powered satellite imagery discovery and multi-temporal change intelligence system for SIH 2026.</li>
-                            <li>Coordinated the team across AI/ML, backend, geospatial processing, computer vision and dashboard development to integrate the complete solution workflow.</li>
-                            <li>Managed project architecture, technical planning, prototype development and SIH documentation while ensuring integration of the system's core modules.</li>
-                        </ul>
-                        <div class="project-tech-badges">
-                            <span>Figma</span><span>Canva</span><span>Python</span><span>FastAPI</span><span>PyTorch</span>
-                        </div>
-                        <div class="project-action-links">
-                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
-                            <a href="#" class="btn-action glass" id="projDemo3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card-v2 glass reveal">
-                    <div class="card-glow"></div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <span class="project-num-v2">04</span>
-                            <span class="project-period">Present</span>
-                        </div>
-                        <h3>ODFE — Odoo Food Experience</h3>
-                        <span class="project-role">Odoo Developer</span>
-                        <ul class="project-highlights">
-                            <li>Developed a modular enterprise restaurant POS suite on Odoo 19 with 16 custom addons covering POS, payments, products, tables, bookings, kitchen operations and self-ordering.</li>
-                            <li>Implemented real-time restaurant workflows including a Kitchen Display System, customer display, QR-based self-ordering, payment integration and order synchronization.</li>
-                            <li>Built analytics and reporting features with dashboard visualizations and PDF/XLSX report generation using a modular Odoo architecture.</li>
-                        </ul>
-                        <div class="project-tech-badges">
-                            <span>Odoo 19</span><span>Python</span><span>OWL 2</span><span>JavaScript</span><span>PostgreSQL</span><span>Docker</span>
-                        </div>
-                        <div class="project-action-links">
-                            <a href="https://github.com/gowsikbaskaran" target="_blank" class="btn-action glass" id="projGit4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C7.5 2.8 6.4 3.1 6.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 005 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> GitHub</a>
-                            <a href="#" class="btn-action glass" id="projDemo4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 

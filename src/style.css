@@ -1355,45 +1355,171 @@ button {
     border-radius: 10px
 }
 
-#projects {
+/* PROJECTS PINNED SCROLL SECTION */
+#projects.projects-pinned-section {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.projects-pinned-inner {
+    width: 100%;
+    min-height: 100vh;
+    padding: 85px 48px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.projects-top-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.projects-section-header {
+    margin-bottom: 0 !important;
+    text-align: left;
+    max-width: 620px;
+}
+
+.projects-section-header .section-title {
+    text-align: left;
+    margin: 6px 0 10px;
+}
+
+.projects-section-header .eyebrow {
+    justify-content: flex-start;
+}
+
+.projects-section-header .section-desc {
+    text-align: left;
+    margin: 0;
+}
+
+.projects-nav-hint {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.projects-progress-track {
+    width: 80px;
+    height: 4px;
+    background: rgba(20, 184, 166, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.projects-progress-bar {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--glow));
+    border-radius: 4px;
+    transition: width 0.15s ease-out;
+}
+
+.projects-counter {
+    font-family: var(--font-alt);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}
+
+.projects-counter #projectActiveNum {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.projects-scroll-tip {
+    font-family: var(--font-alt);
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-left: 1px solid var(--glass-border);
+    padding-left: 14px;
+}
+
+.projects-scroll-tip svg {
+    color: var(--accent);
+    animation: tipArrowBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes tipArrowBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.projects-horizontal-viewport {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+    padding: 10px 0 20px;
 }
 
 .projects-list-v2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    width: 100%
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 32px;
+    width: max-content;
+    will-change: transform;
 }
 
 .project-card-v2 {
-    padding: 30px;
+    width: 520px;
+    max-width: 85vw;
+    flex-shrink: 0;
+    padding: 30px 28px;
     background: var(--glass);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-between
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
 }
 
 .project-card-body {
     display: flex;
     flex-direction: column;
-    height: 100%
+    height: 100%;
 }
 
 .project-card-v2:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
-    box-shadow: 0 20px 40px -15px #14b8a61f
+    box-shadow: 0 20px 40px -15px #14b8a61f;
 }
 
 .project-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 14px
+    gap: 12px;
+    margin-bottom: 14px;
 }
 
 .project-card-top-meta {
@@ -1401,7 +1527,7 @@ button {
     align-items: center;
     gap: 10px;
     margin-left: auto;
-    min-width: 0
+    min-width: 0;
 }
 
 .project-logo {
@@ -1428,6 +1554,18 @@ button {
     display: block;
 }
 
+.project-logo-icon {
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid rgba(20, 184, 166, 0.22);
+    color: var(--accent);
+}
+
+.project-logo-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent);
+}
+
 .project-card-v2:hover .project-logo {
     transform: scale(1.05);
     border-color: rgba(20, 184, 166, .45);
@@ -1446,7 +1584,7 @@ button {
     padding: 4px 10px;
     border-radius: 12px;
     white-space: nowrap;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .project-role {
@@ -1457,7 +1595,7 @@ button {
     letter-spacing: .06em;
     text-transform: uppercase;
     color: var(--glow);
-    margin: -6px 0 14px
+    margin: -4px 0 14px;
 }
 
 .project-highlights {
@@ -1466,7 +1604,7 @@ button {
     flex-direction: column;
     gap: 11px;
     margin-bottom: 22px;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .project-highlights li {
@@ -1474,7 +1612,7 @@ button {
     line-height: 1.6;
     color: var(--text-secondary);
     position: relative;
-    padding-left: 17px
+    padding-left: 17px;
 }
 
 .project-highlights li:before {
@@ -1483,11 +1621,11 @@ button {
     font-size: 17px;
     position: absolute;
     left: 0;
-    top: -1px
+    top: -1px;
 }
 
 .project-card-top .project-num-v2 {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .project-num-v2 {
@@ -1497,7 +1635,7 @@ button {
     font-weight: 700;
     letter-spacing: .1em;
     display: block;
-    margin-bottom: 12px
+    margin-bottom: 12px;
 }
 
 .project-card-v2 h3 {
@@ -1505,7 +1643,7 @@ button {
     font-size: 20px;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 12px
+    margin-bottom: 10px;
 }
 
 .project-card-v2 p {
@@ -1513,14 +1651,14 @@ button {
     color: var(--text-secondary);
     line-height: 1.65;
     margin-bottom: 24px;
-    font-weight: 400
+    font-weight: 400;
 }
 
 .project-tech-badges {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 24px
+    margin-bottom: 24px;
 }
 
 .project-tech-badges span {
@@ -1529,12 +1667,12 @@ button {
     background: #14b8a60a;
     border: 1px solid rgba(20, 184, 166, .1);
     padding: 4px 10px;
-    border-radius: 12px
+    border-radius: 12px;
 }
 
 .project-action-links {
     display: flex;
-    gap: 12px
+    gap: 12px;
 }
 
 .btn-action {
@@ -1551,7 +1689,7 @@ button {
     border: 1px solid var(--glass-border);
     color: var(--text-secondary);
     box-shadow: 0 2px 8px #00000008;
-    transition: all .3s
+    transition: all .3s;
 }
 
 .btn-action svg {
@@ -1998,8 +2136,7 @@ button {
         grid-template-columns: 1fr;
         gap: 40px
     }
-    .internships-grid,
-    .projects-list-v2 {
+    .internships-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px
     }
@@ -2467,13 +2604,49 @@ button {
         padding: 3px 7px;
         border-radius: 6px
     }
+    #projects.projects-pinned-section {
+        min-height: auto;
+        padding: 70px 18px 50px;
+        display: block;
+    }
+    .projects-pinned-inner {
+        min-height: auto;
+        padding: 0;
+    }
+    .projects-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+    .projects-section-header {
+        max-width: 100%;
+    }
+    .projects-nav-hint {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+        padding: 8px 14px;
+    }
+    .projects-horizontal-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+        scroll-snap-type: x mandatory;
+    }
     .projects-list-v2 {
-        grid-template-columns: 1fr;
-        gap: 16px
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: max-content;
     }
     .project-card-v2 {
+        width: 82vw;
+        max-width: 340px;
+        scroll-snap-align: start;
         padding: 18px 14px;
-        border-radius: 14px
+        border-radius: 14px;
     }
     .project-card-top {
         margin-bottom: 10px
