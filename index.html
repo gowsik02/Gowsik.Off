@@ -719,14 +719,22 @@
                         <span class="projects-counter">
                             <span id="projectActiveNum">01</span> / <span class="total-num">04</span>
                         </span>
+                        <div class="projects-nav-arrows">
+                            <button class="proj-nav-arrow" id="projPrevBtn" aria-label="Previous project">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                            </button>
+                            <button class="proj-nav-arrow" id="projNextBtn" aria-label="Next project">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                            </button>
+                        </div>
                         <span class="projects-scroll-tip">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            Scroll to explore
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span class="projects-tip-text">Scroll or swipe</span>
                         </span>
                     </div>
                 </div>
 
-                <div class="projects-horizontal-viewport">
+                <div class="projects-horizontal-viewport" id="projectsViewport">
                     <div class="projects-list-v2" id="projectsTrack">
 
                         <!-- Project 01 -->

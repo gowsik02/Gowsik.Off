@@ -4,8 +4,8 @@ import './style.css';
 // Check for touch / coarse pointer devices
 const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0 || window.matchMedia("(pointer: coarse)").matches;
 
-// Smooth Scrolling with Lenis
-let lenisInstance;
+// Smooth Scrolling with Lenis (Desktop only)
+let lenisInstance = null;
 if (!isTouch && typeof Lenis !== 'undefined') {
     lenisInstance = new Lenis({
         duration: 1.1,
@@ -76,17 +76,17 @@ function runLoader() {
             }
             setTimeout(() => {
                 if (loader) {
-                    loader.style.transition = "opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+                    loader.style.transition = "opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
                     loader.style.opacity = "0";
                     setTimeout(() => {
                         loader.style.display = "none";
                         animateHeroEntry();
                         initEducationTimeline();
-                    }, 800);
+                    }, 600);
                 }
-            }, 800);
+            }, 500);
         }
-    }, 160);
+    }, 130);
 }
 
 window.addEventListener("load", () => {
@@ -102,14 +102,14 @@ setTimeout(() => {
         loaderStarted = true;
         runLoader();
     }
-}, 2500);
+}, 2000);
 
 // Hero Entry Animation
 function animateHeroEntry() {
     document.querySelectorAll("#hero .hero-left > *").forEach((el, i) => {
         el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.transition = `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.1}s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.1}s`;
+        el.style.transform = "translateY(24px)";
+        el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s`;
         requestAnimationFrame(() => {
             el.style.opacity = "1";
             el.style.transform = "translateY(0)";
@@ -123,27 +123,35 @@ function initNav() {
     if (!nav) return;
 
     let lastScroll = window.scrollY;
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-        if (currentScroll > 60) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
+    let ticking = false;
 
-        if (currentScroll > lastScroll && currentScroll > 150) {
-            nav.classList.add("hide");
-        } else {
-            nav.classList.remove("hide");
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 50) {
+                    nav.classList.add("scrolled");
+                } else {
+                    nav.classList.remove("scrolled");
+                }
+
+                if (currentScroll > lastScroll && currentScroll > 150) {
+                    nav.classList.add("hide");
+                } else {
+                    nav.classList.remove("hide");
+                }
+                lastScroll = currentScroll;
+                ticking = false;
+            });
+            ticking = true;
         }
-        lastScroll = currentScroll;
-    });
+    }, { passive: true });
 
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-links a");
     const observerOptions = {
         root: null,
-        rootMargin: "-30% 0px -50% 0px",
+        rootMargin: "-25% 0px -45% 0px",
         threshold: 0
     };
 
@@ -188,9 +196,9 @@ function initEducationTimeline() {
     if (items.length !== 0) {
         gsap.from(items, {
             opacity: 0,
-            y: 40,
-            stagger: 0.2,
-            duration: 1,
+            y: 35,
+            stagger: 0.15,
+            duration: 0.9,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: ".education-timeline-container",
@@ -221,18 +229,33 @@ function initMetrics() {
     });
 }
 
-// Split Characters in Section Titles
+// Split Characters in Section Titles (Word-safe & non-touch desktop only)
 function initSplitText() {
-    if (typeof ScrollTrigger === 'undefined') return;
+    if (typeof ScrollTrigger === 'undefined' || isTouch) return;
     document.querySelectorAll(".section-title").forEach((title) => {
-        const text = title.textContent || '';
+        const text = title.textContent ? title.textContent.trim() : '';
+        if (!text) return;
+        const words = text.split(/\s+/);
         title.innerHTML = "";
-        [...text].forEach((char, idx) => {
-            const span = document.createElement("span");
-            span.className = "split-char";
-            span.innerHTML = char === " " ? "&nbsp;" : char;
-            span.style.transitionDelay = `${idx * 0.025}s`;
-            title.appendChild(span);
+        let charCounter = 0;
+        words.forEach((word, wIdx) => {
+            const wordSpan = document.createElement("span");
+            wordSpan.className = "split-word";
+            wordSpan.style.display = "inline-block";
+            wordSpan.style.whiteSpace = "nowrap";
+            [...word].forEach((char) => {
+                const charSpan = document.createElement("span");
+                charSpan.className = "split-char";
+                charSpan.textContent = char;
+                charSpan.style.transitionDelay = `${charCounter * 0.02}s`;
+                wordSpan.appendChild(charSpan);
+                charCounter++;
+            });
+            title.appendChild(wordSpan);
+            if (wIdx < words.length - 1) {
+                const space = document.createTextNode(" ");
+                title.appendChild(space);
+            }
         });
 
         ScrollTrigger.create({
@@ -248,8 +271,9 @@ function initSplitText() {
     });
 }
 
-// Interactive Glass Card Glow
+// Interactive Glass Card Glow (Desktop mouse only)
 function initCardGlow() {
+    if (isTouch) return;
     const cardSelectors = ".glass, .about-card, .skill-card, .intern-card, .project-card-v2, .cert-card-v2, .contact-card-glass, .contact-form-col";
     document.querySelectorAll(cardSelectors).forEach((card) => {
         let glow = card.querySelector(".card-glow");
@@ -264,7 +288,7 @@ function initCardGlow() {
             const y = e.clientY - rect.top;
             glow.style.left = `${x}px`;
             glow.style.top = `${y}px`;
-        });
+        }, { passive: true });
     });
 }
 
@@ -278,56 +302,66 @@ function initReveal() {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -5% 0px"
+        threshold: 0.08,
+        rootMargin: "0px 0px -4% 0px"
     });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
 
-// Magnetic Buttons Effect
-document.querySelectorAll(".btn, .social-circle-glass, .social-glass-pill").forEach((btn) => {
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
-    let rafId = null;
+// Magnetic Buttons Effect (Desktop only)
+function initMagneticButtons() {
+    if (isTouch) return;
+    document.querySelectorAll(".btn, .social-circle-glass, .social-glass-pill").forEach((btn) => {
+        let currentX = 0;
+        let currentY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        let rafId = null;
 
-    function tick() {
-        currentX += (targetX - currentX) * 0.15;
-        currentY += (targetY - currentY) * 0.15;
-        btn.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
-        if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
-            rafId = requestAnimationFrame(tick);
-        } else {
-            rafId = null;
+        function tick() {
+            currentX += (targetX - currentX) * 0.15;
+            currentY += (targetY - currentY) * 0.15;
+            btn.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+            if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+                rafId = requestAnimationFrame(tick);
+            } else {
+                rafId = null;
+            }
         }
-    }
 
-    btn.addEventListener("mousemove", (e) => {
-        const rect = btn.getBoundingClientRect();
-        targetX = (e.clientX - rect.left - rect.width / 2) * 0.22;
-        targetY = (e.clientY - rect.top - rect.height / 2) * 0.22;
-        if (!rafId) rafId = requestAnimationFrame(tick);
+        btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            targetX = (e.clientX - rect.left - rect.width / 2) * 0.22;
+            targetY = (e.clientY - rect.top - rect.height / 2) * 0.22;
+            if (!rafId) rafId = requestAnimationFrame(tick);
+        }, { passive: true });
+
+        btn.addEventListener("mouseleave", () => {
+            targetX = 0;
+            targetY = 0;
+            if (!rafId) rafId = requestAnimationFrame(tick);
+        });
     });
+}
 
-    btn.addEventListener("mouseleave", () => {
-        targetX = 0;
-        targetY = 0;
-        if (!rafId) rafId = requestAnimationFrame(tick);
-    });
-});
-
-// Cursor Glow Follower
+// Cursor Glow Follower (Desktop only)
 function initCursorGlow() {
     const cursor = document.getElementById("cursor-glow");
     if (!cursor || isTouch) return;
 
+    let cursorTicking = false;
     document.addEventListener("mousemove", (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-        cursor.style.opacity = "1";
-    });
+        if (!cursorTicking) {
+            requestAnimationFrame(() => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+                cursor.style.opacity = "1";
+                cursorTicking = false;
+            });
+            cursorTicking = true;
+        }
+    }, { passive: true });
 
     document.addEventListener("mouseleave", () => {
         cursor.style.opacity = "0";
@@ -339,12 +373,19 @@ function initScrollProgress() {
     const bar = document.getElementById("scroll-progress");
     if (!bar) return;
 
+    let barTicking = false;
     window.addEventListener("scroll", () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = `${progress}%`;
-    });
+        if (!barTicking) {
+            requestAnimationFrame(() => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+                bar.style.width = `${progress}%`;
+                barTicking = false;
+            });
+            barTicking = true;
+        }
+    }, { passive: true });
 }
 
 // Skill Progress Bar Fill
@@ -370,32 +411,52 @@ function initSkillBars() {
     });
 }
 
-// Horizontal Pinned Scroll for Featured Projects
+// Responsive Projects Showcase (Desktop Pinned Scroll + Mobile Native Touch Carousel)
 function initProjectsHorizontalScroll() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
     const section = document.getElementById("projects");
     const track = document.getElementById("projectsTrack");
-    const viewport = document.querySelector(".projects-horizontal-viewport");
+    const viewport = document.getElementById("projectsViewport") || document.querySelector(".projects-horizontal-viewport");
     const progressBar = document.getElementById("projectsProgressBar");
     const activeNum = document.getElementById("projectActiveNum");
     const cards = document.querySelectorAll(".project-card-v2");
+    const prevBtn = document.getElementById("projPrevBtn");
+    const nextBtn = document.getElementById("projNextBtn");
 
     if (!section || !track || cards.length === 0) return;
 
+    // Next/Previous Arrow Navigation
+    if (prevBtn && viewport) {
+        prevBtn.addEventListener("click", () => {
+            const cardWidth = cards[0] ? cards[0].offsetWidth + 16 : 300;
+            if (window.innerWidth <= 768) {
+                viewport.scrollBy({ left: -cardWidth, behavior: "smooth" });
+            } else {
+                window.scrollBy({ top: -window.innerHeight * 0.45, behavior: "smooth" });
+            }
+        });
+    }
+
+    if (nextBtn && viewport) {
+        nextBtn.addEventListener("click", () => {
+            const cardWidth = cards[0] ? cards[0].offsetWidth + 16 : 300;
+            if (window.innerWidth <= 768) {
+                viewport.scrollBy({ left: cardWidth, behavior: "smooth" });
+            } else {
+                window.scrollBy({ top: window.innerHeight * 0.45, behavior: "smooth" });
+            }
+        });
+    }
+
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
     const mm = gsap.matchMedia();
 
-    mm.add({
-        isDesktop: "(min-width: 769px)",
-        isMobile: "(max-width: 768px)"
-    }, (context) => {
-        const { isMobile } = context.conditions;
-
+    // DESKTOP: Smooth Pinned GSAP Scroll
+    mm.add("(min-width: 769px)", () => {
         const getScrollDistance = () => {
             const trackWidth = track.scrollWidth;
             const containerWidth = viewport ? viewport.clientWidth : window.innerWidth;
-            const extraPad = isMobile ? 24 : 48;
-            return Math.max(0, trackWidth - containerWidth + extraPad);
+            return Math.max(0, trackWidth - containerWidth + 48);
         };
 
         const horizontalTween = gsap.to(track, {
@@ -404,14 +465,9 @@ function initProjectsHorizontalScroll() {
             scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                end: () => {
-                    const dist = getScrollDistance();
-                    return isMobile
-                        ? `+=${Math.max(window.innerHeight * 2, dist * 1.35)}`
-                        : `+=${Math.max(window.innerHeight * 1.8, dist * 1.25)}`;
-                },
+                end: () => `+=${Math.max(window.innerHeight * 1.8, getScrollDistance() * 1.25)}`,
                 pin: true,
-                scrub: isMobile ? 0.6 : 0.8,
+                scrub: 0.8,
                 invalidateOnRefresh: true,
                 anticipatePin: 1,
                 onUpdate: (self) => {
@@ -434,7 +490,49 @@ function initProjectsHorizontalScroll() {
         return () => {
             if (horizontalTween.scrollTrigger) horizontalTween.scrollTrigger.kill();
             horizontalTween.kill();
-            gsap.set(track, { clearProps: "transform" });
+            gsap.set(track, { clearProps: "all" });
+        };
+    });
+
+    // MOBILE: Hardware-Accelerated Native Touch Swipe (Zero Lag, 120fps)
+    mm.add("(max-width: 768px)", () => {
+        gsap.set(track, { clearProps: "all" });
+
+        if (!viewport) return;
+
+        let scrollTicking = false;
+        const updateMobileProgress = () => {
+            const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+            if (maxScroll <= 0) return;
+            const scrollLeft = viewport.scrollLeft;
+            const progress = Math.min(1, Math.max(0, scrollLeft / maxScroll));
+            
+            const cardWidth = cards[0] ? cards[0].offsetWidth + 16 : 300;
+            const totalCards = cards.length;
+            const activeIdx = Math.min(totalCards, Math.max(1, Math.round(scrollLeft / cardWidth) + 1));
+            
+            if (activeNum) {
+                activeNum.textContent = activeIdx < 10 ? `0${activeIdx}` : `${activeIdx}`;
+            }
+            if (progressBar) {
+                const minPct = Math.round(100 / totalCards);
+                const pct = Math.min(100, Math.max(minPct, Math.round(minPct + progress * (100 - minPct))));
+                progressBar.style.width = `${pct}%`;
+            }
+            scrollTicking = false;
+        };
+
+        viewport.addEventListener("scroll", () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(updateMobileProgress);
+                scrollTicking = true;
+            }
+        }, { passive: true });
+
+        updateMobileProgress();
+
+        return () => {
+            viewport.removeEventListener("scroll", updateMobileProgress);
         };
     });
 }
@@ -446,6 +544,7 @@ window.addEventListener("DOMContentLoaded", () => {
     initSplitText();
     initMetrics();
     initCardGlow();
+    initMagneticButtons();
     initCursorGlow();
     initScrollProgress();
     initSkillBars();
