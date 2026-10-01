@@ -385,11 +385,17 @@ function initProjectsHorizontalScroll() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 769px)", () => {
+    mm.add({
+        isDesktop: "(min-width: 769px)",
+        isMobile: "(max-width: 768px)"
+    }, (context) => {
+        const { isMobile } = context.conditions;
+
         const getScrollDistance = () => {
             const trackWidth = track.scrollWidth;
             const containerWidth = viewport ? viewport.clientWidth : window.innerWidth;
-            return Math.max(0, trackWidth - containerWidth + 40);
+            const extraPad = isMobile ? 24 : 48;
+            return Math.max(0, trackWidth - containerWidth + extraPad);
         };
 
         const horizontalTween = gsap.to(track, {
@@ -398,20 +404,27 @@ function initProjectsHorizontalScroll() {
             scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                end: () => `+=${Math.max(window.innerHeight * 1.8, getScrollDistance() * 1.25)}`,
+                end: () => {
+                    const dist = getScrollDistance();
+                    return isMobile
+                        ? `+=${Math.max(window.innerHeight * 2, dist * 1.35)}`
+                        : `+=${Math.max(window.innerHeight * 1.8, dist * 1.25)}`;
+                },
                 pin: true,
-                scrub: 0.8,
+                scrub: isMobile ? 0.6 : 0.8,
                 invalidateOnRefresh: true,
                 anticipatePin: 1,
                 onUpdate: (self) => {
                     const progress = self.progress;
                     if (progressBar) {
-                        const pct = Math.min(100, Math.max(25, Math.round(25 + progress * 75)));
+                        const totalCards = cards.length;
+                        const minPct = Math.round(100 / totalCards);
+                        const pct = Math.min(100, Math.max(minPct, Math.round(minPct + progress * (100 - minPct))));
                         progressBar.style.width = `${pct}%`;
                     }
                     if (activeNum) {
                         const totalCards = cards.length;
-                        const activeIdx = Math.min(totalCards, Math.max(1, Math.floor(progress * totalCards * 0.96) + 1));
+                        const activeIdx = Math.min(totalCards, Math.max(1, Math.floor(progress * totalCards * 0.98) + 1));
                         activeNum.textContent = activeIdx < 10 ? `0${activeIdx}` : `${activeIdx}`;
                     }
                 }
@@ -423,11 +436,6 @@ function initProjectsHorizontalScroll() {
             horizontalTween.kill();
             gsap.set(track, { clearProps: "transform" });
         };
-    });
-
-    mm.add("(max-width: 768px)", () => {
-        gsap.set(track, { clearProps: "transform" });
-        if (progressBar) progressBar.style.width = "100%";
     });
 }
 

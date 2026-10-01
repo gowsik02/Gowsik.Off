@@ -1380,44 +1380,52 @@ button {
 
 .projects-top-bar {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
     margin-bottom: 28px;
     width: 100%;
-    flex-wrap: wrap;
 }
 
 .projects-section-header {
     margin-bottom: 0 !important;
-    text-align: left;
-    max-width: 620px;
+    text-align: center;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .projects-section-header .section-title {
-    text-align: left;
+    text-align: center;
     margin: 6px 0 10px;
 }
 
 .projects-section-header .eyebrow {
-    justify-content: flex-start;
+    justify-content: center;
+    display: inline-flex;
 }
 
 .projects-section-header .section-desc {
-    text-align: left;
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 620px;
 }
 
 .projects-nav-hint {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--glass-border);
-    padding: 10px 20px;
+    padding: 8px 18px;
     border-radius: 30px;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .projects-progress-track {
@@ -2605,48 +2613,101 @@ button {
         border-radius: 6px
     }
     #projects.projects-pinned-section {
-        min-height: auto;
-        padding: 70px 18px 50px;
-        display: block;
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: 100vh;
+        height: 100dvh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
     }
     .projects-pinned-inner {
-        min-height: auto;
-        padding: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 60px 16px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
     }
     .projects-top-bar {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 20px;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        width: 100%;
     }
     .projects-section-header {
         max-width: 100%;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .projects-section-header .eyebrow {
+        justify-content: center;
+        display: inline-flex;
+    }
+    .projects-section-header .section-title {
+        text-align: center;
+        margin: 4px 0 6px;
+    }
+    .projects-section-header .section-desc {
+        text-align: center;
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.45;
+        margin: 0 auto;
     }
     .projects-nav-hint {
-        width: 100%;
+        width: auto;
         box-sizing: border-box;
-        justify-content: space-between;
-        padding: 8px 14px;
+        justify-content: center;
+        padding: 5px 14px;
+        gap: 12px;
+    }
+    .projects-progress-track {
+        width: 60px;
+        height: 3.5px;
+    }
+    .projects-counter {
+        font-size: 11.5px;
+    }
+    .projects-scroll-tip {
+        font-size: 10.5px;
+        padding-left: 10px;
     }
     .projects-horizontal-viewport {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 15px;
-        scroll-snap-type: x mandatory;
+        width: 100%;
+        overflow: visible;
+        position: relative;
+        padding: 4px 0 8px;
+        touch-action: pan-y;
     }
     .projects-list-v2 {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         gap: 16px;
         width: max-content;
+        will-change: transform;
+        padding: 0 4px;
     }
     .project-card-v2 {
-        width: 82vw;
-        max-width: 340px;
-        scroll-snap-align: start;
-        padding: 18px 14px;
-        border-radius: 14px;
+        width: 85vw;
+        max-width: 350px;
+        max-height: calc(100dvh - 205px);
+        overflow-y: auto;
+        padding: 16px 14px;
+        border-radius: 16px;
+        box-sizing: border-box;
     }
     .project-card-top {
         margin-bottom: 10px
